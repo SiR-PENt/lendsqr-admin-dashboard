@@ -1,6 +1,8 @@
 @import "mixins";
+@import "config";
 
 .navbar {
+
     background-color: white;
     width: 100%;
     @include nav-padding;
@@ -10,11 +12,66 @@
     align-items: center;
     box-shadow: 3px 0px 20px rgba(0, 0, 0, 0.04);
     
-   .input-container {
-      height: 40px;
-      input {
-        @include input-field;
-        border-radius: 8px 0 0 8px;
-      }
-   }
+    .nav-container {
+
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .search-container {
+             height: 40px;
+             display: flex;
+
+            .input-container {
+               height: 100%;
+               width: 250px;
+
+               input {            
+                 @include input-field;
+                 border-radius: 8px 0 0 8px;
+               }
+            }
+            .btn-search {
+               border: none;
+               width: 50px;
+               border-radius: 0 8px 8px 0; 
+               background-color: $btn-primary;
+               cursor: pointer;
+            }
+        }
+
+        .user-nav {
+            display: flex;
+            align-items: center;
+
+            p:first-child {
+                border-bottom: 2px solid;
+                margin-right: 20px;
+                cursor:pointer;
+            }
+            img {
+                display: inline-block;
+                object-fit: contain;
+                margin-right: 20px;
+
+                &.avatar {
+                    height: 40px;
+                    width: 40px;
+                    border-radius: 50%;
+                }    
+                
+                &:last-child {
+                    cursor:pointer
+                }
+            }
+
+            p:nth-last-child(2) {
+                margin-right: 5px;
+                cursor: pointer;
+            }
+
+        }
+    }
+
 }

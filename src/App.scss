@@ -1,7 +1,8 @@
-@import './styles/index.scss';
-@import './styles/sidebar.scss';
-@import './styles/navbar.scss';
-
+@import './styles/login';
+@import './styles/sidebar';
+@import './styles/navbar';
+@import './styles/page';
+@import './styles/card';
 
 * {
     margin: 0;
@@ -13,7 +14,7 @@ body {
     font-family: 'Work Sans', 'sans-serif';
     background-color: #E5E5E5;
     font-size: 16px;
-    p {
+    p, h1 {
     color:#213F7D 
     }
  }

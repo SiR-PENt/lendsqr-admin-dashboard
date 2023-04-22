@@ -7,7 +7,7 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import LoginAuth from './Login-Auth.tsx';
-import Dashboard from './Dashboard.tsx';
+import Users from './Users.tsx';
 
 const router = createBrowserRouter([
   
@@ -17,8 +17,8 @@ const router = createBrowserRouter([
   },
 
   {
-    path: "/dashboard",
-    element: <Dashboard/>
+    path: "/dashboard/users",
+    element: <Users/>
   },
 
 ]);

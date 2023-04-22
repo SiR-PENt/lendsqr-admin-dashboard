@@ -1,0 +1,36 @@
+@import 'mixins';
+@import 'config';
+
+
+.container {
+    margin-top: 30px;
+  
+    .analytics-container {
+       display: flex;
+       justify-content: space-between;
+
+       .card {
+           background: #FFFFFF;
+           border: 1px solid rgba(33, 63, 125, 0.06);
+           box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+           border-radius: 4px;
+           width: 23%;
+           height:180px;
+           padding: 20px;
+   
+           img {
+               display: inline-block;
+           }
+           p {
+               text-transform: uppercase;
+               &:last-child {
+                   font-size: 24px;
+                   font-weight: bold;
+               }
+           }
+       }
+    }
+
+}
+
+

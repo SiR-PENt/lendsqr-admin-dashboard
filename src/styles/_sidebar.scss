@@ -9,62 +9,81 @@
     z-index: 99;
 
     &::-webkit-scrollbar {
-         width: 8px;
-        }
+         width: 2px;
+    }
         
      &::-webkit-scrollbar-thumb {
-        margin-top: 80px;
-         display: none;
+        display: none;
         border-radius: 10px;
         background: $text-light; 
         cursor: pointer;
         opacity: .4;
+
         &:hover {
             display: block;
             transition: display .8s ease-out;
         }
     }
 
-.sidebar-logo-container {
-    height:70px;
-    padding: 20px;
-    box-shadow: 3px 0px 20px rgba(0, 0, 0, 0.04);
-    color: #545F7D;
-    position: fixed;
-    background-color: white;
-    width: 280px;
+    .sidebar-logo-container {
+        height:70px;
+        padding: 20px;
+        // box-shadow: 3px 0px 5px rgba(0, 0, 0, 0.04);
+        color: #545F7D;
+        position: fixed;
+        background-color: white;
+        width: 280px;
+
+    img {
+        cursor: pointer;
+     }
     } 
 
     & > ul {      
        margin-top: 80px;
        height: 100%;
+
         li {
             display: flex;
             align-items: center;
-            padding: 10px 20px;
+            padding: 10px 0px 10px 20px;
             cursor: pointer;
+            font-size:16px;
+            
+            &:nth-child(1) p{
+                color: $text-secondary;
+            }
+            
+            p {
+                color: $text-light;
+            }
+
+            &:hover {
+                background-color: $bg-hover;
+            }
 
             img {
                 object-fit: contain;
                 margin-right: 0.5rem;
+                // opacity: .3;
             }
 
             img:last-child {
                 margin-left: 0.5rem; 
               }
-        }
-        & > div {
-            margin-top: 10px;
-
-            li {
-                color: $text-light !important;
+            
+            &:nth-child(2) {
+                  margin-top: 20px;
+              }
             }
 
-            .title {
-                text-transform: uppercase;
-                font-size:12px;
-                padding: 10px 20px;
+
+         .title {
+            margin-top: 15px;
+            text-transform: uppercase;
+            font-size:12px;
+            padding: 10px 20px;
             }
-        }
+        
     }  
 }
