@@ -1,0 +1,25 @@
+
+
+@mixin login-containers {
+    width:50%;
+    display: flex;
+    align-items: center;
+}
+
+@mixin input-field {
+    border-radius: 5px;
+    padding-left: 10px;
+    border: 2px solid rgba(84, 95, 125, 0.15);
+    outline: none;
+    height: 100%;
+    width: 100%;
+}
+
+@mixin sidebar-li {
+    display: flex;
+}
+
+@mixin nav-padding {
+   padding: 20px;
+   height: 70px;
+}

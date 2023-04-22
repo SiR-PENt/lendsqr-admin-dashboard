@@ -1,0 +1,20 @@
+@import "mixins";
+
+.navbar {
+    background-color: white;
+    width: 100%;
+    @include nav-padding;
+    position: fixed;
+    padding: 0 20px 0 350px;
+    display: flex;
+    align-items: center;
+    box-shadow: 3px 0px 20px rgba(0, 0, 0, 0.04);
+    
+   .input-container {
+      height: 40px;
+      input {
+        @include input-field;
+        border-radius: 8px 0 0 8px;
+      }
+   }
+}
