@@ -4,33 +4,81 @@
 
 .container {
     margin-top: 30px;
-  
-    .analytics-container {
-       display: flex;
-       justify-content: space-between;
+     
+ }
 
-       .card {
-           background: #FFFFFF;
-           border: 1px solid rgba(33, 63, 125, 0.06);
-           box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
-           border-radius: 4px;
-           width: 23%;
-           height:180px;
-           padding: 20px;
-   
+
+.analytics-container {
+   display: flex;
+   justify-content: space-between;
+   margin-bottom: 50px;
+
+   .card {
+       background: #FFFFFF;
+       border: 1px solid rgba(33, 63, 125, 0.06);
+       box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+       border-radius: 4px;
+       width: 23%;
+       height:160px;
+       padding: 20px;
+       transition: transform .3s ease-in-out;
+
+       &:hover {
+          background-color: $bg-hover;
+          transform: scale(1.05);
+       }
+
+       .card-img-container {
+             padding: 20px;
+             width: 30px;
+             height: 30px;
+             display: flex;
+             justify-content: center;
+             align-items: center;
+             border-radius: 50%;
+
+             &.users {
+                background: hsla(292, 100%, 90%, 1);
+             } 
+             &.active-users {
+                background: hsla(256, 100%, 90%, 1);
+             } 
+             &.loan-users {
+                background: hsla(9, 90%, 90%, 1);
+            } 
+             &.saving-users {
+                background: hsla(345, 100%, 90%, 1);
+            } 
+
            img {
-               display: inline-block;
-           }
-           p {
-               text-transform: uppercase;
-               &:last-child {
-                   font-size: 24px;
-                   font-weight: bold;
-               }
+               object-fit: contain;
            }
        }
-    }
 
+       p {
+           text-transform: uppercase;
+           margin-top: 10px;
+           font-size: 14px;
+           &:last-child {
+               font-size: 24px;
+               font-weight: bold;
+           }
+       }
+   }
 }
 
+ table {
+    //  border: 1px solid;
+     width: 100%;
+     padding: 20px;
+     color: $text-title;
+     background-color: white;
+     box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+     th {
+        text-align: left;
+        img {
+             margin-left: 10px;
+        }
+     }
+}
 

@@ -3,13 +3,16 @@ type CardProps = {
    title: string,
    count: number,
    src: string,
+   className: string,
 }
 
-export default function Card({ title, count, src }: CardProps) {
+export default function Card({ title, count, src, className}: CardProps) {
 
     return (
         <div className="card"> 
+          <div className={`card-img-container ${className}`}>
           <img src={src} alt={`${src} icon`}/>
+          </div>
           <p>{title}</p>
           <p>{count}</p>
         </div>
