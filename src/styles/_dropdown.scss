@@ -1,0 +1,36 @@
+
+.dropdown {
+    position: absolute;
+    // bottom: 0;
+    top: 115%;
+    left: 20px;
+    background-color: white;
+    z-index: 99;
+    display: none;
+    border-radius: 4px;
+    // padding: 10px 0;
+    transition: display .5s ease-out;
+    &.show {
+        display: block;
+    }
+    li {
+        display: flex;
+        cursor: pointer;
+        padding: 12px 10px;
+        &:hover {
+            background-color: $bg-hover;
+        }
+        
+        img {
+            object-fit: contain;
+            margin-right: 5px;
+        }
+    }
+    p {
+    white-space: nowrap;
+    &:hover {
+        background-color: $bg-hover;
+    }
+   }
+    
+}

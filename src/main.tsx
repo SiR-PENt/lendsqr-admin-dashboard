@@ -8,6 +8,7 @@ import {
 } from "react-router-dom";
 import LoginAuth from './Login-Auth.tsx';
 import Users from './Users.tsx';
+import UserDetails from './User-details.tsx';
 
 const router = createBrowserRouter([
   
@@ -19,6 +20,11 @@ const router = createBrowserRouter([
   {
     path: "/dashboard/users",
     element: <Users/>
+  },
+
+  {
+    path: "/dashboard/users/:id",
+    element: <UserDetails/>
   },
 
 ]);

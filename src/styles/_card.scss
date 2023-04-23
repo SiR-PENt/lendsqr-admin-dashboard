@@ -4,9 +4,7 @@
 
 .container {
     margin-top: 30px;
-     
  }
-
 
 .analytics-container {
    display: flex;
@@ -66,19 +64,56 @@
        }
    }
 }
-
- table {
-    //  border: 1px solid;
-     width: 100%;
-     padding: 20px;
-     color: $text-title;
+ .table-container {  
      background-color: white;
+     padding: 30px;
      box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+     border-radius: 4px;
+ }
+ table {
+     width: 100%;
+     color: $text-title;
+     border-collapse: collapse;
+
      th {
         text-align: left;
+        padding: 10px 0;
+        div {
+            display: flex;
+        }
         img {
-             margin-left: 10px;
+            margin-left: 10px;
+            object-fit: contain;
+            display: block;
         }
      }
+     tbody {
+        tr {
+            td { 
+               padding: 15px 0;
+               border-bottom: 1px solid hsla(256, 100%, 90%, 1);;
+               font-size: 14px;
+               div {
+                   display: flex;
+                   justify-content: space-between;
+                   align-items: center;
+                   position: relative;
+                   & > p {
+                    background-color: hsla(256, 100%, 90%, 1);
+                    padding: 8px;
+                    border-radius: 15px;
+                   }
+                   img {
+                    display: block;
+                    cursor:pointer;
+                   }
+               }
+            }
+            &:last-child {
+                border-bottom: 0;
+            }
+        }
+     }
+
 }
 

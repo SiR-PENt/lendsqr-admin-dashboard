@@ -26,7 +26,7 @@ import audit from '../../assets/dashboard/audit.png'
 export default function Sidebar() {
 
    return (
-        <nav className="sidebar">
+        <aside className="sidebar">
             
             <div className="sidebar-logo-container">
                 <img src={logo} alt="lendsqr-logo"/>
@@ -152,6 +152,6 @@ export default function Sidebar() {
                 <p>Audit Logs</p>
                 </li>
             </ul>
-        </nav>
+        </aside>
    )
 }
