@@ -128,13 +128,18 @@
         display: flex;
         justify-content: space-between;
         padding-top: 50px;
+
         p {
-            padding-bottom: 10px;
+            padding-bottom: 8px;
             padding-inline: 5px;
             color: black;
             cursor: pointer;
             &.active {
                 color: $text-primary;
+            }
+            &.active {
+                color: $text-primary;
+                border-bottom: 2px solid $text-primary; 
             }
         }
      }

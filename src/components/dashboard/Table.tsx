@@ -89,6 +89,7 @@ export default function Table<T extends object>({ users }: TableProps<T[]>) {
                  const slicedEmail = shortenStr(email, 7)
                  
                  return (
+
                      <tr key={id} className="tr-body">
                      <td>{slicedOrganization}</td>             
                      <td>{slicedUserName}</td>   
@@ -106,6 +107,7 @@ export default function Table<T extends object>({ users }: TableProps<T[]>) {
                      </td>   
                      </tr>                     
                  )
+                 
                })     
             }          
          </tbody>

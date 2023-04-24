@@ -85,29 +85,35 @@
         }
      }
      tbody {
+
         tr {
+            border-bottom: 1px solid hsla(256, 100%, 90%, 1);
+
+            &:last-child {
+                border-bottom: none;
+            }
+            
             td { 
                padding: 15px 0;
-               border-bottom: 1px solid hsla(256, 100%, 90%, 1);
                font-size: 14px;
+
                div {
                    display: flex;
                    justify-content: space-between;
                    align-items: center;
                    position: relative;
+
                    & > p {
                     background-color: hsla(256, 100%, 90%, 1);
                     padding: 8px;
                     border-radius: 15px;
                    }
+
                    img {
                     display: block;
                     cursor:pointer;
                    }
                }
-            }
-            &:last-child {
-                border-bottom: 0;
             }
         }
      }

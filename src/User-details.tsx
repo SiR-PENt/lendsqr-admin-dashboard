@@ -8,10 +8,11 @@ import emptyStar from "./assets/dashboard/empty-star.png"
 import { AxiosResponse } from "axios";
 
 
-
 export default function UserDetails():JSX.Element {
    
     const [ user, setUser ] = useState<{[key: string]: any}>();
+    const [ active, setActive ] = useState<'General Settings' | "Documents" | 'Bank Details'  >("General Settings");
+    
 
     const { id } = useParams();
 
@@ -69,7 +70,7 @@ export default function UserDetails():JSX.Element {
             </div>
             </div>
             <footer>
-                <p>General Details</p>
+                <p className={`${active === 'General Settings' ? 'active' : ''}`}>General Details</p>
                 <p>Documents</p>
                 <p>Bank Details</p>
                 <p>Loans</p>

@@ -43,6 +43,13 @@
        margin-top: 80px;
        height: 100%;
 
+        .active {
+            li {
+                background-color: $bg-hover;
+                border-left: 4px solid $text-primary;
+            }
+        }
+
         li {
             display: flex;
             align-items: center;
@@ -53,7 +60,7 @@
             &:nth-child(1) p{
                 color: $text-secondary;
             }
-            
+
             p {
                 color: $text-light;
             }
@@ -77,6 +84,7 @@
                   margin-top: 20px;
               }
             }
+        
 
 
          .title {

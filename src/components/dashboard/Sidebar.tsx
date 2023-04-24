@@ -22,10 +22,11 @@ import fees from '../../assets/dashboard/fees-and-pricing.png'
 import audit from '../../assets/dashboard/audit.png'
 import systemMessages from '../../assets/dashboard/system-messages.png'
 import signOut from '../../assets/dashboard/sign-out.png'
-
+import { NavLink } from "react-router-dom"
 
 
 export default function Sidebar() {
+
 
    return (
         <aside className="sidebar">
@@ -49,11 +50,19 @@ export default function Sidebar() {
                 </li>
 
                 <p className="title">Customers</p>
-
+                
+                <NavLink
+                 style={{
+                    textDecoration: 'none'
+                 }}
+                 to="/dashboard/users"
+                 className={({ isActive }) =>
+                 isActive ? "active" : ""}>
                 <li>
                 <img src={userFriends} alt='user icon'/>
                 <p>Users</p>
                 </li>
+                </NavLink>
 
                 <li>
                 <img src={users} alt='users icon'/>

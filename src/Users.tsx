@@ -35,6 +35,14 @@ export default function Users<T extends object>() {
        <Card title={"Users with Savings"} count={1234} src={savingsUsers} className={"saving-users"}/>
       </div>
       <Table users={users} />
+
+      <footer>
+        <p>Showing</p>
+        <div>
+
+        </div>
+        <p>out of {users.length}</p>
+      </footer>
       </div>
      </Page>
     )
