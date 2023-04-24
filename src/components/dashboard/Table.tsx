@@ -1,26 +1,27 @@
 import filter from "../../assets/dashboard/filter.png"
 import ellipsis from "../../assets/dashboard/ellipsis.png"
-import { DataProps } from "../../Users"
 import Dropdown from "./Dropdown"
 import { useState } from "react"
 
-type TableProps = {
-    data: DataProps
-}
+type TableProps<T extends object> = {
+    users: T
+} // users is a generic of type object just as in he Users component
 
-export default function Table({ data }: TableProps) {
+type User = {
+   [key: string]: any
+}  //use index signature for type checking individual objects in the users array. 
+
+export default function Table<T extends object>({ users }: TableProps<T[]>) {
 
     const [ activeId, setActiveId ] = useState<string>('');
-
     const shortenStr = (str: string, num: number): string => {
-        if(str.length > 6) {
+        if(str.length > 7) {
           return `${str.slice(0, num)}...`
         }
         else {
            return str
         }
       }
-    
     
     return (
 
@@ -69,8 +70,9 @@ export default function Table({ data }: TableProps) {
          <tbody>
            
             {
-              data.map((data) => {
-                 const { id, organization, userName, email, phoneNumber, createdAt } = data
+            users.map((user: User) => {  
+
+                 const { id, orgName, userName, email, phoneNumber, createdAt } = user
                  const date = new Date(createdAt);
                  const formattedDate = date.toLocaleString('en-NG', {
                   month: 'short',
@@ -80,10 +82,12 @@ export default function Table({ data }: TableProps) {
                   minute: 'numeric',
                   hour12: true
                   });
-                 const slicedOrganization = shortenStr(organization, 11)
+
+                 const slicedOrganization = shortenStr(orgName, 11)
                  const slicedUserName = shortenStr(userName, 10)
                  const slicedPhoneNumber = shortenStr(phoneNumber, 15)
-                 const slicedEmail = shortenStr(email, 6)
+                 const slicedEmail = shortenStr(email, 7)
+                 
                  return (
                      <tr key={id} className="tr-body">
                      <td>{slicedOrganization}</td>             
@@ -96,12 +100,10 @@ export default function Table({ data }: TableProps) {
                          <p className='status'>Inactive</p>
                          <img src={ellipsis} alt="ellipsis icon"
                           onMouseEnter={() => setActiveId(id)} 
-                        //   onMouseLeave={() => setActiveId('')}
                           />
                          <Dropdown id={id} toggleDropdown={{activeId, setActiveId}}/>
                        </div>
                      </td>   
-                      <hr/>
                      </tr>                     
                  )
                })     

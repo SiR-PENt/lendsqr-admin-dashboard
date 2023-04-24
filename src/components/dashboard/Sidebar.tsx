@@ -20,6 +20,8 @@ import chartBar from '../../assets/dashboard/chart-bar.png'
 import slider from '../../assets/dashboard/sliders.png'
 import fees from '../../assets/dashboard/fees-and-pricing.png'
 import audit from '../../assets/dashboard/audit.png'
+import systemMessages from '../../assets/dashboard/system-messages.png'
+import signOut from '../../assets/dashboard/sign-out.png'
 
 
 
@@ -151,6 +153,19 @@ export default function Sidebar() {
                 <img src={audit} alt='audit icon'/>
                 <p>Audit Logs</p>
                 </li>
+
+                <li>
+                <img src={systemMessages} alt='system icon'/>
+                <p>System Messages</p>
+                </li>
+
+                 <footer>
+                <li>
+                <img src={signOut} alt='signout icon'/>
+                <p>Log Out</p>
+                </li>
+                <p>v1.2.0</p>
+                 </footer>
             </ul>
         </aside>
    )

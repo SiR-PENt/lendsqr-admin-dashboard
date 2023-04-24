@@ -2,7 +2,7 @@
 @import 'config';
 
 
-.container {
+.user-container {
     margin-top: 30px;
  }
 
@@ -12,10 +12,9 @@
    margin-bottom: 50px;
 
    .card {
-       background: #FFFFFF;
+       @include Card;
+       margin-top: 50px;
        border: 1px solid rgba(33, 63, 125, 0.06);
-       box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
-       border-radius: 4px;
        width: 23%;
        height:160px;
        padding: 20px;
@@ -65,11 +64,9 @@
    }
 }
  .table-container {  
-     background-color: white;
-     padding: 30px;
-     box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
-     border-radius: 4px;
+     @include Card;
  }
+ 
  table {
      width: 100%;
      color: $text-title;
@@ -91,7 +88,7 @@
         tr {
             td { 
                padding: 15px 0;
-               border-bottom: 1px solid hsla(256, 100%, 90%, 1);;
+               border-bottom: 1px solid hsla(256, 100%, 90%, 1);
                font-size: 14px;
                div {
                    display: flex;

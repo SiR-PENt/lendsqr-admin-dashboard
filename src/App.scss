@@ -4,6 +4,7 @@
 @import './styles/page';
 @import './styles/card';
 @import './styles/dropdown';
+@import './styles/user-details';
 
 * {
     margin: 0;
@@ -15,7 +16,7 @@ body {
     font-family: 'Work Sans', 'sans-serif';
     background-color: #E5E5E5;
     font-size: 16px;
-    p, h1 {
+    p, h1, h2, h3 {
     color:#213F7D 
     }
  }

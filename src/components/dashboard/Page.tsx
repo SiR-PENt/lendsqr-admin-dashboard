@@ -13,7 +13,7 @@ export default function Page ({children, title}: PageProps) {
         <Navbar/>
         <Sidebar/>
         <div className='page'>
-        <h1>{title}</h1>
+        { title ? <h1>{title}</h1> : '' }  {/* this will be useful for other not yet existent pages  */}
             {children}
         </div>
         </>

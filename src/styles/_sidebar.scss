@@ -83,9 +83,22 @@
             margin-top: 15px;
             text-transform: uppercase;
             font-size:12px;
-            padding: 10px 20px;
             color:$text-title;
+            padding: 10px 20px;
             }
-        
+         
+        footer {
+            border-top: 1px solid hsla(256, 100%, 90%, 1);
+            margin-top: 30px;
+            padding-left: 20px;
+
+            li {
+            padding: 20px 0;
+            }
+            & > p:last-child {
+                font-size: 12px;
+                margin-top: 30px;
+            }
+        }
     }  
 }

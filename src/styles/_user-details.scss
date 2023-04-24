@@ -1,0 +1,214 @@
+@import 'config';
+@import 'mixins';
+
+
+@mixin title {
+    text-transform: uppercase;
+    font-size:12px;
+    color:$text-title; 
+    margin-bottom: 10px;
+}
+
+@mixin table-container {
+    border-bottom: 1px solid hsla(256, 100%, 90%, 1);
+    padding-bottom: 30px;
+}
+
+@mixin table($column, $row) {
+    margin-top: 30px;
+    display: grid;
+    grid-row-gap: 40px;
+    grid-template-columns: repeat($column, auto);
+    grid-template-rows: repeat($row, auto);
+}
+
+.nav-back-container {
+     display: flex;
+     img {
+        object-fit: contain;
+        display: block;
+     }
+     p {
+        margin-left: 5px;
+     }
+}
+
+.user-details-container {
+     margin-top: 30px;
+
+     .title-container {
+         margin-bottom: 50px;
+         display: flex;
+         justify-content: space-between;
+         align-items: center;
+
+         button {
+            border-radius: 8px;
+            padding: 8px 15px;
+            font-size: 14px;
+            text-transform: uppercase;
+            font-weight: 600;
+            
+            &:first-child {
+                border: 1px solid $btn-danger;
+                color: $btn-danger;
+                cursor: pointer;
+                opacity: 1;
+                transition: opacity .5s ease-in-out;
+
+                &:hover {
+                    opacity: .7;
+                }
+            }
+            
+            &:last-child {
+                margin-left: 10px;
+                border: 1px solid $btn-primary;
+                opacity: 1;
+                transition: opacity .5s ease-in-out;
+                color: $btn-primary;
+                cursor:pointer;
+
+                &:hover {
+                    opacity: .5;
+                }
+            }
+         }
+     }
+     .user-details {
+         @include Card;
+         padding-bottom: 0;
+
+         & > div {
+             display: flex;
+             align-items: center;
+            //  padding: 20px;
+             p:first-child {
+                padding-bottom: 10px
+             }
+
+             .avatar-container {
+                display: flex;
+                align-items: center;
+
+                img {
+                    border-radius: 50%;
+                    object-fit: cover;
+                    width: 100px;
+                    height: 100px;
+                }
+                .user-name {
+                    padding: 20px;
+                    p:first-child {
+                        font-size: 22px;
+                        font-weight: bold;
+                    } 
+                    p:last-child {
+                        font-size: 14px;
+                    }
+                }
+             }
+             .col-2, .col-3 {
+                padding: 20px;
+                border-left: 1px solid hsla(256, 100%, 90%, 1);
+             }
+             .col-3 {
+                p:first-child {
+                    font-weight: bold;
+                    font-size: 22px;
+                }
+                p:last-child {
+                    font-size: 12px;
+                }
+             }
+         }
+     }
+
+     footer {
+        display: flex;
+        justify-content: space-between;
+        padding-top: 50px;
+        p {
+            padding-bottom: 10px;
+            padding-inline: 5px;
+            color: black;
+            cursor: pointer;
+            &.active {
+                color: $text-primary;
+            }
+        }
+     }
+}
+
+ .user-info {
+
+     @include Card;
+     margin-top: 50px;
+     h3 {
+        font-size: 16px;
+     }
+
+     .personal-info {
+        @include table-container;
+
+        .personal-info-table {
+            @include table(5, 2);    
+            div {
+                p:first-child {
+                    @include title
+                }
+             }
+         }
+     }
+     
+     .education {
+        @include table-container;
+        padding-top: 20px;
+
+        .education-table {
+           @include table(4, 2);
+
+            div {
+                p:first-child {
+                    @include title
+                }
+             }
+        }
+     } 
+
+     .socials {
+        @include table-container;
+        padding-top: 20px;
+
+        .socials-table {
+           @include table(5, 1);
+
+            div {
+                p:first-child {
+                    @include title
+                }
+             }
+        } 
+
+     }
+     
+     .guarantor {
+        @include table-container;
+        padding-top: 20px;
+
+        .guarantor-table {
+           @include table(5, 1);
+
+            div {
+                p:first-child {
+                    @include title
+                }
+             }
+        } 
+
+        &.footer-item {
+            border-bottom: none;
+        }
+     }
+}
+
