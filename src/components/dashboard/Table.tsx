@@ -107,7 +107,7 @@ export default function Table<T extends object>({ users }: TableProps<T[]>) {
                      </td>   
                      </tr>                     
                  )
-                 
+
                })     
             }          
          </tbody>

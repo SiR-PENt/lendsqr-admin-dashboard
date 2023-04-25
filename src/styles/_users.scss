@@ -87,12 +87,12 @@
      tbody {
 
         tr {
-            border-bottom: 1px solid hsla(256, 100%, 90%, 1);
+            border-bottom: 1px solid rgba(33, 63, 125, 0.1);
 
             &:last-child {
                 border-bottom: none;
             }
-            
+
             td { 
                padding: 15px 0;
                font-size: 14px;
@@ -104,7 +104,7 @@
                    position: relative;
 
                    & > p {
-                    background-color: hsla(256, 100%, 90%, 1);
+                    background-color: rgba(33, 63, 125, 0.1);
                     padding: 8px;
                     border-radius: 15px;
                    }

@@ -10,7 +10,7 @@
 }
 
 @mixin table-container {
-    border-bottom: 1px solid hsla(256, 100%, 90%, 1);
+    border-bottom: 1px solid rgba(33, 63, 125, 0.1);
     padding-bottom: 30px;
 }
 
@@ -110,7 +110,7 @@
              }
              .col-2, .col-3 {
                 padding: 20px;
-                border-left: 1px solid hsla(256, 100%, 90%, 1);
+                border-left: 1px solid rgba(33, 63, 125, 0.1);
              }
              .col-3 {
                 p:first-child {
