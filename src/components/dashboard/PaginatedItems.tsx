@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import ReactPaginate from "react-paginate";
 import Table from "./Table";
 import { AxiosResponse } from "axios"
@@ -47,14 +47,15 @@ export default  function PaginatedItems<T extends object>() {
     // following the API or data you're working with.
     const [itemOffset, setItemOffset] = useState<number>(0);
     
+    const fetchData = useCallback(() => {
+     getUsers()
+    .then(({data} : AxiosResponse<T[]>) => { 
+      setUsers(data)  
+    })
+    .catch(err => console.log(err))
+  }, []);
+  
     useEffect(() => {
-        const fetchData = (): void => {
-        getUsers()
-        .then(({data} : AxiosResponse<T[]>) => { 
-          setUsers(data)  
-        })
-        .catch(err => console.log(err))
-      }
         fetchData()
       }, [])
 

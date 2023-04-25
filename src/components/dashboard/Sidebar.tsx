@@ -25,11 +25,11 @@ import signOut from '../../assets/dashboard/sign-out.png'
 import { NavLink } from "react-router-dom"
 
 
-export default function Sidebar() {
+export default function Sidebar({ show }: { show: boolean }) {
 
 
    return (
-        <aside className="sidebar">
+        <aside className={`${show ? 'show' : ''} sidebar`}>
             
             <div className="sidebar-logo-container">
                 <img src={logo} alt="lendsqr-logo"/>

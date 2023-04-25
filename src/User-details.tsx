@@ -21,7 +21,6 @@ export default function UserDetails():JSX.Element {
         getUserById(id!)
         .then(({data}: AxiosResponse<{[key: string]:any}>) => {
             setUser(data)
-            console.log(data)
         })
         .catch((err) => console.log(err))
     }, [id])
@@ -39,7 +38,7 @@ export default function UserDetails():JSX.Element {
         <main className="user-details-container">
           <div className="title-container">
            <h1>User Details</h1>
-          <div>
+          <div className="button-container">
             <button>Blacklist User</button>
             <button>Activate User</button>
          </div>
@@ -56,6 +55,7 @@ export default function UserDetails():JSX.Element {
               <p>{user.userName}</p>  
              </div>
             </div>
+            <div>
             <div className="col-2">
                 <p>User's Tier</p>
                 <div>
@@ -67,6 +67,7 @@ export default function UserDetails():JSX.Element {
             <div className="col-3">
                 <p>₦{user.accountBalance}</p>
                 <p>{user.accountNumber}/Providus Bank</p>
+            </div>
             </div>
             </div>
             <footer>
@@ -106,15 +107,15 @@ export default function UserDetails():JSX.Element {
                </div>
                <div>
                <p>Marital Status</p> 
-               <p>{user.profile.maritalStatus}</p>    
+               <p>None</p>    
                </div>
                <div>
                <p>Children</p> 
-               <p>{user.profile.children}</p>    
+               <p>None</p>    
                </div>
                <div>
                <p>Type of Residence</p> 
-               <p>{user.profile.typeOfResidence}</p>    
+               <p>None</p>    
                </div>
                 </div> 
             </div>
@@ -184,11 +185,11 @@ export default function UserDetails():JSX.Element {
                </div>                
               <div>
                <p>Email</p> 
-               <p>{user.guarantor.email}</p>    
+               <p>None</p>    
                </div>                
               <div>
                <p>Relationship</p> 
-               <p>{user.guarantor.relationship}</p>    
+               <p>None</p>    
                </div>                
               </div>
             </div>
@@ -205,11 +206,11 @@ export default function UserDetails():JSX.Element {
                </div>                
               <div>
                <p>Email</p> 
-               <p>{user.guarantor.email}</p>    
+               <p>None</p>    
                </div>                
               <div>
                <p>Relationship</p> 
-               <p>{user.guarantor.relationship}</p>    
+               <p>None</p>    
                </div>                
               </div>
             </div>

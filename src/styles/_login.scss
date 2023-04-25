@@ -10,8 +10,10 @@
 
    .hero-container {
       @include login-containers;
-      padding:50px;
       justify-content: center;
+      img {
+         width: 90%;
+      }
    }
 
    .login-form {
@@ -90,4 +92,25 @@
       }
    }
 
+}
+
+@include media-md {
+   .login-container {
+      display: block;
+
+      .hero-container {
+         display: none;
+      }
+      .login-form {
+         width: 100%;
+         padding: 0 20px;
+
+         h1 {
+            text-align: center;
+         }
+         p:nth-child(2) {
+            text-align: center;
+         }
+      }
+   }
 }
