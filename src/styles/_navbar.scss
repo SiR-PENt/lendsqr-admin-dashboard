@@ -95,11 +95,22 @@
             .menu {
                 display: block;
             }
+            
             .search-container {
                 height: 30px;
                 margin-left: 10px;
+
                 .input-container {
                     width: 70%;
+
+                    input {
+                        color: #545F7D;
+
+                        &::placeholder {
+                            color: #545F7D;
+                            opacity: 0.7;
+                        }
+                    }
                 }
 
                 .btn-search {

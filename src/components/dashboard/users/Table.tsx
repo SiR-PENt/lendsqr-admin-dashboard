@@ -1,5 +1,5 @@
-import filter from "../../assets/dashboard/filter.png"
-import ellipsis from "../../assets/dashboard/ellipsis.png"
+import filter from "../../../assets/dashboard/filter.png"
+import ellipsis from "../../../assets/dashboard/ellipsis.png"
 import Dropdown from "./Dropdown"
 import { useState } from "react"
 

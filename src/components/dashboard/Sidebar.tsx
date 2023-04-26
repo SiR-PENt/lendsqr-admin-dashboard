@@ -22,11 +22,17 @@ import fees from '../../assets/dashboard/fees-and-pricing.png'
 import audit from '../../assets/dashboard/audit.png'
 import systemMessages from '../../assets/dashboard/system-messages.png'
 import signOut from '../../assets/dashboard/sign-out.png'
-import { NavLink } from "react-router-dom"
+import { NavLink, useNavigate } from "react-router-dom"
 
 
 export default function Sidebar({ show }: { show: boolean }) {
+   
+   const navigate = useNavigate()
 
+   const handleLogOut = () => {
+       navigate('/')
+       sessionStorage.removeItem('auth')
+   }
 
    return (
         <aside className={`${show ? 'show' : ''} sidebar`}>
@@ -169,7 +175,7 @@ export default function Sidebar({ show }: { show: boolean }) {
                 </li>
 
                  <footer>
-                <li>
+                <li onClick={handleLogOut}>
                 <img src={signOut} alt='signout icon'/>
                 <p>Log Out</p>
                 </li>

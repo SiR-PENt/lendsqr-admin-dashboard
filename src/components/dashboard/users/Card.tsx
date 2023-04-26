@@ -1,7 +1,7 @@
 
 type CardProps = {
    title: string,
-   count: number,
+   count: string,
    src: string,
    className: string,
 }

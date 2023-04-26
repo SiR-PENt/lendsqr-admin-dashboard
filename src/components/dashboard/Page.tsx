@@ -1,8 +1,8 @@
 import Navbar from "./Navbar";
 import Sidebar from "./Sidebar";
 import { useState } from 'react';
-import { auth } from "../login-auth/firebaseConfig";
 import { Navigate } from "react-router-dom";
+
 type PageProps = {
    children: React.ReactNode,
    title?: string,
@@ -11,12 +11,12 @@ type PageProps = {
 export default function Page ({children, title}: PageProps) {
     
     const [ show, setShow ] = useState<boolean>(false);
+    const authFromSessionStorage = sessionStorage.getItem('auth')
     
     return (
         <>
-        {
-        
-        (auth.currentUser === null) ? 
+        {  
+        (!authFromSessionStorage) ? 
         <Navigate to='/' replace={true}/> :
         (
         <>

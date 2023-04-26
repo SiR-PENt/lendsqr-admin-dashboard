@@ -2,10 +2,10 @@ import { useState, useEffect, useCallback } from "react";
 import ReactPaginate from "react-paginate";
 import Table from "./Table";
 import { AxiosResponse } from "axios"
-import left from '../../assets/dashboard/left.png'
-import right from '../../assets/dashboard/right.png'
-import { getUsers } from "../../utils/requests";
-import dropdown from '../../assets/dashboard/ipp-dropdown.png'
+import left from '../../../assets/dashboard/left.png'
+import right from '../../../assets/dashboard/right.png'
+import { getUsers } from "../../../utils/requests";
+import dropdown from '../../../assets/dashboard/ipp-dropdown.png'
 
 type ButtonProps = {
    src: string,

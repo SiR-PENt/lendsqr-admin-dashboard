@@ -5,6 +5,7 @@ import Input from './components/login-auth/Input';
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 import {  useNavigate } from 'react-router-dom'
 import { auth } from './components/login-auth/firebaseConfig';
+import { ClipLoader } from "react-spinners";
 
 export default function LoginAuth() {
   
@@ -14,13 +15,16 @@ export default function LoginAuth() {
   const [ hide, setHide ] = useState<boolean>(true)
   const [ helperText, setHelperText ] = useState<string>('')
   const [ signUp, setSignUp ] = useState<boolean>(true)
-  const [ error, setError ] = useState<boolean>(false)
+  const [ error, setError ] = useState<boolean>(false);
+  const [ loading, setLoading ] = useState<boolean>(false)
 
   const handleSignUp = (e: React.FormEvent<HTMLButtonElement> ) => {
     e.preventDefault()
+    setLoading(true)
     createUserWithEmailAndPassword(auth, email, password)
      .then(() => {
       setHelperText('Congrats!, you can now Sign In')
+      setLoading(false)
       setTimeout(() => setHelperText(''), 2000)
       setSignUp(!signUp)
       setError(false)
@@ -30,16 +34,20 @@ export default function LoginAuth() {
     const errorCode = error.code;
     const errorMessage = error.message;
     setError(true)
+    setLoading(false)
     console.log(errorCode, errorMessage)
    });
  }
 
   const handleSignIn = (e: React.FormEvent<HTMLButtonElement>) => {
     e.preventDefault()
+    setLoading(true)
     signInWithEmailAndPassword(auth, email, password)
     .then(() => {
+      setLoading(false)
       setError(false)
       navigate('/dashboard/users')
+      sessionStorage.setItem('auth', JSON.stringify(auth))
      })
    .catch((error) => {
    const errorCode = error.code;
@@ -47,6 +55,7 @@ export default function LoginAuth() {
     setHelperText('Email is not registered!') :
     setHelperText('Invalid password')
     setError(true)
+    setLoading(false)
     setTimeout(() => setHelperText(''), 2000)
   });
 }
@@ -74,7 +83,9 @@ export default function LoginAuth() {
               <p>Forgot Password?</p>
               <p>Don't have an account? <span onClick={() => setSignUp(!signUp)}>Sign Up</span></p>
                <button type='submit' onClick={!signUp ? handleSignUp : handleSignIn}>
-                  {signUp ? ' Log In' : ' Sign Up'} 
+                 {loading ? 
+                 <ClipLoader size={24} color="#ffffff" /> : 
+                 (signUp ? ' Log In' : ' Sign Up')}
                </button>
             </div>
           </form>

@@ -1,6 +1,6 @@
-import viewDetails from '../../assets/dashboard/view-details.png'
-import blacklist from '../../assets/dashboard/blacklist.png'
-import activate from '../../assets/dashboard/activate.png'
+import viewDetails from '../../../assets/dashboard/view-details.png'
+import blacklist from '../../../assets/dashboard/blacklist.png'
+import activate from '../../../assets/dashboard/activate.png'
 import { Link } from 'react-router-dom'
 
 type DropdownProps = {
