@@ -1,4 +1,6 @@
 
+# Features and Functionalities
+
 This documentation will guide you through the various features and functionalities of this web application, starting from the authentication page and walking you through each subsequent page until you reach the user details page. Each feature will be explained in detail, along with explanations for the decisions I made.
 
 ## Login-Auth page
@@ -34,7 +36,7 @@ I used `Generics` in `TypeScript` to type check the value of the returned data l
  }
  ``` 
  
-This was implemented like this because we didn't know the shape of the data coming from the API, hence `Generics` came in handy. The above code implies that `currentItems` is a an Array of objects.
+This was implemented like this because the shape of the data coming from the API is unknown, hence `Generics` came in handy. The above code implies that `currentItems` is a an `array` of `objects`.
 
 The returned data was later populated in the UI with an `HTML Table`. This was used as the preferred method because `HTML Tables` allows for proper alignment of the kind of the design provided. Note that, this table is scrollable on mobile.
 
