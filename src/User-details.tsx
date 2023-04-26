@@ -16,13 +16,41 @@ export default function UserDetails():JSX.Element {
 
     const { id } = useParams();
 
-    useEffect(() => {
+    const fetchUserDetails = (): void => {
 
+      const usersFromLocalStorage = localStorage.getItem('users')
+      if(usersFromLocalStorage) {
+        const users: {[key: string] : any}[] = JSON.parse(usersFromLocalStorage); //users is an array of objects
+        // Loop through the users array and find if the id of a particular user is present
+        const user = users.find((u: {[key: string]: any}) => u.id === id); 
+        if(user){
+          setUser(user)
+        }
+        //if not present, fetch user details from API and update the localstorage, then setUser to the fetched data
+        else {
+          getUserById(id!)
+          .then(({data}: AxiosResponse<{[key: string]:any}>) => {
+            users.push(data)
+            localStorage.setItem('users', JSON.stringify(users));
+            setUser(data)
+          })
+          .catch(err => console.log(err))
+        }
+      }
+      //if users doesn't exist yet, fetchData from the API and initialize the users property on the localStorage
+      else {
         getUserById(id!)
         .then(({data}: AxiosResponse<{[key: string]:any}>) => {
-            setUser(data)
-        })
-        .catch((err) => console.log(err))
+          const users = [data]
+          localStorage.setItem('users', JSON.stringify(users));
+          setUser(data)
+        }) 
+        .catch(err => console.log(err)) 
+      }
+    }
+
+    useEffect(() => {
+        fetchUserDetails()
     }, [id])
 
     return (
@@ -71,7 +99,7 @@ export default function UserDetails():JSX.Element {
             </div>
             </div>
             <footer>
-                <p className={`${active === 'General Settings' ? 'active' : ''}`}>General Details</p>
+                <p onClick={() => setActive('General Settings')} className={`${active === 'General Settings' ? 'active' : ''}`}>General Details</p>
                 <p>Documents</p>
                 <p>Bank Details</p>
                 <p>Loans</p>
