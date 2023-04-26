@@ -34,10 +34,22 @@
 
       & > div:nth-child(1) {
          width:100%;
+         
+         p:first-child {
+
+            &.error {
+            color: rgba(255, 51, 102, 1);
+            } 
+            
+            &.success {
+               color: $text-primary;
+            }
+         }
 
          div:nth-child(1) {
             margin-top: 50px;  
          }
+
          
          .input-container {
             height:40px;
@@ -51,11 +63,11 @@
             } 
          }
 
-         .input-container:nth-child(2) {
+         .input-container:nth-child(3) {
             position: relative;
          }
 
-         span {
+         & span.show {
             font-size: 12px;
             font-weight: 600;
             color: $text-primary;
@@ -68,12 +80,25 @@
 
       }
       
-      p:nth-last-child(2) {
+      p:nth-last-child(3) {
         font-size: 12px;
         font-weight: 600;
         margin-top: 20px;
         color: $text-primary;
         text-transform: uppercase;
+     }
+      p:nth-last-child(2) {
+        font-size: 12px;
+        font-weight: 600;
+        margin-top: 20px;
+        text-transform: uppercase;
+        span {
+         cursor: pointer;
+         color: $text-primary;
+         &:hover {
+            color: $text-secondary;
+         }
+        }
      }
 
       button {
