@@ -7,11 +7,20 @@
    height: 100vh;
    display: flex;
    justify-content: space-between;
-
+   
    .hero-container {
       @include login-containers;
       justify-content: center;
-      img {
+      position: relative;
+      
+      img.logo {
+         padding-left: 5%;
+         position: absolute;
+         top: 80px;
+         left: 0px;
+      }
+
+      img.hero {
          width: 90%;
       }
    }
@@ -40,7 +49,7 @@
             &.error {
             color: rgba(255, 51, 102, 1);
             } 
-            
+
             &.success {
                color: $text-primary;
             }

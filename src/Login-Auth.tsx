@@ -54,8 +54,8 @@ export default function LoginAuth() {
     return (
         <div className='login-container'>
           <div className='hero-container'>
-          {/* <img src={logo} alt='lendsqr-logo'/> */}
-          <img src={hero} alt='hero'/>
+          <img src={logo} className='logo' alt='lendsqr-logo'/>
+          <img src={hero} className='hero' alt='hero'/>
           </div>
           <form className='login-form'>
             <div>
