@@ -38,10 +38,10 @@ export function DropdownFilter({className, setItemsPerPage } : DropdownProps) {
   
 export default  function PaginatedItems<T extends object>() {
      
+   const [currentItems, setCurrentItems] = useState<T[]>([]);
     const [ itemsPerPage, setItemsPerPage ] = useState<number>(50);
     const [ showDropdown, setShowDropdown ] = useState<boolean>(false)
     const [ users, setUsers ] = useState<T[]>([]);
-    const [currentItems, setCurrentItems] = useState<T[]>([]);
     const [pageCount, setPageCount] = useState<number>(0);
     // Here we use item offsets; we could also use page offsets
     // following the API or data you're working with.
