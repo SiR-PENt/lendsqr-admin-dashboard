@@ -221,27 +221,6 @@ export default function UserDetails():JSX.Element {
                </div>                
               </div>
             </div>
-            <div className="guarantor footer-item">
-
-              <div className="guarantor-table">
-              <div>
-               <p>Full Name</p> 
-               <p>{`${user.guarantor.firstName} ${user.guarantor.lastName}`}</p>    
-               </div>                
-              <div>
-               <p>Phone Number</p> 
-               <p>{user.guarantor.phoneNumber}</p>    
-               </div>                
-              <div>
-               <p>Email</p> 
-               <p>None</p>    
-               </div>                
-              <div>
-               <p>Relationship</p> 
-               <p>None</p>    
-               </div>                
-              </div>
-            </div>
          </section>
          </>
         ) 

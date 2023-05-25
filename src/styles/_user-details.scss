@@ -221,15 +221,125 @@
 }
 
 @include media-md {
+
     .user-details-container {
 
         .title-container {
-
+            flex-wrap: wrap;
             h1 {
                 font-size: 24px;
             }
 
             .button-container {
+               width: 100%;
+               margin-top: 20px;
+               display: flex;
+               justify-content: space-between;
+                button {
+                    padding: 8px 5px;
+                    width: 48%;
+                }
+            }
+        }
+
+        .user-details {
+
+            & > div {
+                display: grid;
+                grid-template-columns: auto;
+                grid-template-rows: auto auto;
+
+                & > div {
+                  margin-top: 10px;
+                 
+                  & > div {            
+                    width: 50%;
+                  }
+                }
+            }
+            footer {
+                display: flex;
+                gap: 15px;
+                justify-content: space-between;
+                padding-top: 50px;
+                overflow-x: scroll;
+                padding-bottom: 5px;
+        
+                p {
+                    padding-bottom: 4px;
+                    padding-inline: 0px;
+                    color: black;
+                    cursor: pointer;
+                    flex-shrink: 0;
+    
+                    &.active {
+                        color: $text-primary;
+                    }
+                }
+             }
+        }  
+
+
+        .user-info {
+
+            .personal-info {  
+                overflow-x: scroll;
+                
+                .personal-info-table {
+                    div {
+                        width: 100%;
+                    }
+
+                     display: flex;
+                     flex-wrap: wrap;
+                 }
+             }
+
+             .education {     
+                .education-table {
+                    div {
+                        width: 100%;
+                    }
+                    display: flex;
+                    flex-wrap: wrap;
+                }    
+             }
+             .socials {
+                .socials-table {
+                    div {
+                        width: 100%;
+                    }
+                    display: flex;
+                    flex-wrap: wrap;
+                }
+             }
+             .guarantor {
+                border-bottom: none;
+                div {
+                    width: 100%;
+                }
+
+                .guarantor-table {
+                 display: flex;
+                    flex-wrap: wrap;
+                    gap: 30px; 
+                } 
+        }
+    }
+}
+}
+@include media-lg {
+    .user-details-container {
+
+        .title-container {
+            flex-wrap: wrap;
+            h1 {
+                font-size: 24px;
+            }
+
+            .button-container {
+               width: 100%;
+               margin-top: 20px;
                display: flex;
                justify-content: space-between;
                 button {
@@ -241,26 +351,26 @@
 
         .user-details {
             & > div {
-                display: grid;
-                grid-template-columns: auto;
-                grid-template-rows: auto auto;
+                display: flex;
+
                 & > div {
                   margin-top: 10px;
                 }
             }
             footer {
-                display: grid;
+                display: flex;
+                gap: 15px;
                 justify-content: space-between;
-                grid-template-columns: repeat(6, auto);
-                grid-template-rows: auto;
                 padding-top: 50px;
+                overflow-x: scroll;
+                padding-bottom: 5px;
         
                 p {
                     padding-bottom: 4px;
                     padding-inline: 0px;
-                    font-size: 9px;
                     color: black;
                     cursor: pointer;
+                    flex-shrink: 0;
     
                     &.active {
                         color: $text-primary;

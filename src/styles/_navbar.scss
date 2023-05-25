@@ -150,3 +150,70 @@
         }
     }
 }
+@include media-lg {
+
+    .navbar {
+        width: 100%;
+        padding: 20px; 
+        position: fixed; 
+
+        .nav-container {
+
+            .menu {
+                display: block;
+            }
+            
+            .search-container {
+                height: 30px;
+                margin-left: 10px;
+
+                .input-container {
+                    width: 70%;
+
+                    input {
+                        color: #545F7D;
+
+                        &::placeholder {
+                            color: #545F7D;
+                            opacity: 0.7;
+                        }
+                    }
+                }
+
+                .btn-search {
+                    width: 30px;
+                }
+            }
+        }
+
+        .nav-container {
+
+            .user-nav {
+
+                p:first-child {
+                    margin-right: 20px;        
+                } 
+
+                img {
+                    margin-right: 20px;
+    
+                    &.avatar {
+                        height: 30px;
+                        width: 30px;
+                        border-radius: 50%;
+                        margin-right: 0;
+                    }    
+                    
+                    &:last-child {
+                        cursor:pointer;
+                        display: none;
+                    }
+                }
+
+                p:nth-last-child(2) {
+                    display: none;
+                }
+            }
+        }
+    }
+}
