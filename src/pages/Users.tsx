@@ -1,10 +1,10 @@
-import Page from "./components/dashboard/Page"
-import Card from "./components/dashboard/users/Card"
+import Page from "../components/dashboard/common/Page"
+import Card from "../components/dashboard/users/Card"
 import user from "./assets/dashboard/card-users.png"
 import activeUsers from "./assets/dashboard/active-users.png"
 import loanUsers from "./assets/dashboard/loan-users.png"
 import savingsUsers from "./assets/dashboard/savings-users.png"
-import PaginatedItems from "./components/dashboard/users/PaginatedItems"
+import PaginatedItems from "../components/dashboard/users/PaginatedItems"
 
 export default function Users() {
 

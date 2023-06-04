@@ -1,14 +1,13 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import './App.scss';
-
 import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
-import LoginAuth from './Login-Auth.tsx';
-import Users from './Users.tsx';
-import UserDetails from './User-details.tsx';
+import LoginAuth from './pages/Login-Auth.tsx';
+import Users from './pages/Users.tsx';
+import UserDetails from './pages/User-details.tsx';
 
 const router = createBrowserRouter([
   
