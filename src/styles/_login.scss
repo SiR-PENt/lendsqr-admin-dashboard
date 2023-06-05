@@ -12,6 +12,7 @@
       @include login-containers;
       justify-content: center;
       position: relative;
+      background-color: white;
       
       img.logo {
          padding-left: 5%;
@@ -22,6 +23,7 @@
 
       img.hero {
          width: 90%;
+         margin-top: 20px;
       }
    }
 
@@ -31,19 +33,22 @@
       background-color: white;
       padding: 0 120px 0 80px;
       margin-bottom: 70px;
+      box-shadow: 0px 15px 90px rgba(0, 0, 0, 0.03);
 
       h1 {
          color: $text-secondary; 
          font-size: 40px;
-         font-weight: 900;
+         font-weight: 700;
       }
       p:nth-child(2) {
          margin-top: 10px;
+         margin-bottom: 60px;
+         font-weight: 400;
+         font-size: 1.3rem;
       }
 
       & > div:nth-child(1) {
          width:100%;
-         
          p:first-child {
 
             &.error {
@@ -56,7 +61,7 @@
          }
 
          div:nth-child(1) {
-            margin-top: 50px;  
+            margin-top: 50px;
          }
 
          

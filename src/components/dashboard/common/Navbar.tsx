@@ -1,7 +1,7 @@
-import notification from '../../assets/dashboard/notification.png'
-import search from '../../assets/dashboard/search.png'
-import avatar from '../../assets/dashboard/avatar.png'
-import dropdown2 from '../../assets/dashboard/dropdown2.png'
+import notification from '../../../assets/dashboard/notification.png'
+import search from '../../../assets/dashboard/search.png'
+import avatar from '../../../assets/dashboard/avatar.png'
+import dropdown2 from '../../../assets/dashboard/dropdown2.png'
 import { FiMenu } from 'react-icons/fi'
 
 export type ToggleSidebar = {

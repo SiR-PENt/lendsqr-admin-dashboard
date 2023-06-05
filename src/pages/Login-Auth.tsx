@@ -1,5 +1,5 @@
-import hero from './assets/loginHero.png';
-import logo from './assets/logo.png';
+import hero from '../assets/loginHero.png';
+import logo from '../assets/logo.png';
 import { useState } from 'react'
 import Input from '../components/login-auth/Input';
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";

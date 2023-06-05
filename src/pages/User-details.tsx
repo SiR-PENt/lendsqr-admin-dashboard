@@ -2,9 +2,9 @@ import Page from "../components/dashboard/common/Page";
 import { Link, useParams } from "react-router-dom";
 import { getUserById } from "../utils/requests";
 import { useEffect, useState } from 'react';
-import backArrow from "./assets/dashboard/back-arrow.png"
-import fullStar from "./assets/dashboard/full-star.png"
-import emptyStar from "./assets/dashboard/empty-star.png"
+import backArrow from "../assets/dashboard/back-arrow.png"
+import fullStar from "../assets/dashboard/full-star.png"
+import emptyStar from "../assets/dashboard/empty-star.png"
 import { AxiosResponse } from "axios";
 
 
