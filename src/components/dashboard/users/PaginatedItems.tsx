@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback } from "react";
+import { AxiosResponse } from "axios"
 import ReactPaginate from "react-paginate";
 import Table from "./Table";
-import { AxiosResponse } from "axios"
 import left from '../../../assets/dashboard/left.png'
 import right from '../../../assets/dashboard/right.png'
 import { getUsers } from "../../../utils/requests";
@@ -36,16 +36,16 @@ export function DropdownFilter({className, setItemsPerPage } : DropdownProps) {
     )
 }
   
-export default  function PaginatedItems<T extends object>() {
+export default function PaginatedItems<T extends object>() {
      
-   const [currentItems, setCurrentItems] = useState<T[]>([]);
-    const [ itemsPerPage, setItemsPerPage ] = useState<number>(50);
-    const [ showDropdown, setShowDropdown ] = useState<boolean>(false)
     const [ users, setUsers ] = useState<T[]>([]);
-    const [pageCount, setPageCount] = useState<number>(0);
+    const [ currentItems, setCurrentItems ] = useState<T[]>([]);
+    const [ itemsPerPage, setItemsPerPage ] = useState<number>(50);
+    const [ pageCount, setPageCount ] = useState<number>(0);
+    const [ showDropdown, setShowDropdown ] = useState<boolean>(false)
     // Here we use item offsets; we could also use page offsets
     // following the API or data you're working with.
-    const [itemOffset, setItemOffset] = useState<number>(0);
+    const [ itemOffset, setItemOffset ] = useState<number>(0);
     
     const fetchData = useCallback(() => {
      getUsers()
@@ -67,7 +67,7 @@ export default  function PaginatedItems<T extends object>() {
       }
     }, [users, itemOffset, itemsPerPage]);
   
-    // Invoke when user click to request another page.
+    // Invoke when user clicks to request another page.
     const handlePageClick = (event: { selected : number}) => { //since we just need the selected property
      if(currentItems) {
          const newOffset = event.selected * itemsPerPage % users.length;
@@ -83,6 +83,7 @@ export default  function PaginatedItems<T extends object>() {
           <Table users={currentItems} />
 
           <div className="pagination-container">
+
             <div>
             <p>Showing</p>
             <div 
@@ -96,6 +97,7 @@ export default  function PaginatedItems<T extends object>() {
             </div>
             <p>out of {users.length}</p>
             </div>
+
            <ReactPaginate
             nextLabel={<Button src={right}/>}
             onPageChange={handlePageClick}

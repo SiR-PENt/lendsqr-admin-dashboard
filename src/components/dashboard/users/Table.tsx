@@ -14,6 +14,7 @@ type User = {
 export default function Table<T extends object>({ users }: TableProps<T[]>) {
 
     const [ activeId, setActiveId ] = useState<string>('');
+    
     const shortenStr = (str: string, num: number): string => {
         if(str.length > 7) {
           return `${str.slice(0, num)}...`
@@ -106,9 +107,7 @@ export default function Table<T extends object>({ users }: TableProps<T[]>) {
                        </div>
                      </td>   
                      </tr>                     
-                 )
-
-               })     
+                 )})     
             }          
          </tbody>
         </table>

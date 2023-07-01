@@ -7,7 +7,7 @@ import {  useNavigate } from 'react-router-dom'
 import { auth } from '../components/login-auth/firebaseConfig';
 import { ClipLoader } from "react-spinners";
 
-export default function LoginAuth() {
+export default function Login () {
   
   const navigate = useNavigate()
   const [ email, setEmail ] = useState<string>('');
