@@ -98,3 +98,5 @@ The algorithm First checks if the `users` property exists in the `localStorage`,
 If `users` property doesn't exist on the `localStorage` yet, an API call is made and a `users` property is initialized in the `localStorage`.
 
 After this process is completed, data is then populated to the UI.
+
+To learn more about the functionalities implemented, check out this [article](https://medium.com/@olasunkanmiibalogun/a-technical-interview-project-building-a-lending-as-a-service-application-e1dfa9cbeda4)
