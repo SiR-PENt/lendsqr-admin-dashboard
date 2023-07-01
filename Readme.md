@@ -99,4 +99,4 @@ If `users` property doesn't exist on the `localStorage` yet, an API call is made
 
 After this process is completed, data is then populated to the UI.
 
-To learn more about the functionalities implemented, check out this [article](https://medium.com/@olasunkanmiibalogun/a-technical-interview-project-building-a-lending-as-a-service-application-e1dfa9cbeda4)
+To learn more about the functionalities implemented, check out this [article.](https://medium.com/@olasunkanmiibalogun/a-technical-interview-project-building-a-lending-as-a-service-application-e1dfa9cbeda4)
